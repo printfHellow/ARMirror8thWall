@@ -104,7 +104,7 @@ const config = {
       ],
     }),
   ],
-  resolve: {extensions: ['.ts', '.js']},
+  resolve: { extensions: ['.ts', '.js'] },
   module: {
     rules: [
       makeJsLoader(),
@@ -118,15 +118,21 @@ const config = {
   mode: 'production',
   context: srcPath,
   devServer: {
+    host: '0.0.0.0',
+    port: 8080,
+    allowedHosts: 'all',
+
     open: false,
     compress: true,
     hot: true,
     liveReload: false,
+
     headers: {
       'Access-Control-Allow-Origin': '*',
       'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, PATCH, OPTIONS',
       'Access-Control-Allow-Headers': 'X-Requested-With, content-type, Authorization',
     },
+
     client: {
       overlay: {
         warnings: false,
