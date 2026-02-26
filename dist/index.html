@@ -1,0 +1,23 @@
+<!doctype html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Armirror</title><meta itemprop="name" content="Armirror"><meta name="twitter:title" content="Armirror"><meta property="og:title" content="Armirror"><meta property="og:site_name" content="Armirror"><meta name="description" content=""><meta itemprop="description" content=""><meta property="og:description" content=""><meta name="twitter:description" content=""><script crossorigin="anonymous" src="./external/scripts/8frame-1.5.0.min.js"></script><script crossorigin="anonymous" src="./external/xrextras/xrextras.js"></script><script crossorigin="anonymous" src="./external/landing-page/landing-page.js"></script><script crossorigin="anonymous" src="./external/xr/xr.js" async="true" data-preload-chunks="face, slam"></script><meta name="8thwall:renderer" content="aframe:1.5.0"/><meta name="8thwall:package" content="@8thwall.xrextras"/><meta name="8thwall:package" content="@8thwall.landing-page"/><meta property="og:image" content="https://i.giphy.com/media/rAi32DNlsWNpItOpDr/giphy.gif"/></head><body><script src="bundle.js"></script><div class="over"><span id="promptText">Tap on walls or ground to place model</span></div><div id="controlButtons" style="display:none"><button id="deleteBtn" class="control-btn delete-btn" title="Delete Model">🗑️</button> <button id="lockBtn" class="control-btn lock-btn" title="Lock/Unlock Position">🔓</button></div><div id="modelSelector"><div class="nav-button" id="prevPage">◀</div><div id="modelGrid"></div><div class="nav-button" id="nextPage">▶</div><div id="pageIndicator">1/1</div></div><a-scene tap-place landing-page xrextras-loading xrextras-runtime-error renderer="colorManagement:true" xrweb="
+    allowedDevices: any;
+    defaultEnvironmentFogIntensity: 0.5; 
+    defaultEnvironmentFloorTexture: #groundTex; 
+    defaultEnvironmentFloorColor: #FFF;
+    defaultEnvironmentSkyBottomColor: #B4C4CC; 
+    defaultEnvironmentSkyTopColor: #5ac8fa;
+    defaultEnvironmentSkyGradientStrength: 0.5;" xr-planes="enabled: true; classification: true; detectionMode: all;"><a-assets><img id="groundTex" src="assets/sand.jpg"/><a-asset-item id="model1" src="assets/Model1.glb"></a-asset-item><a-asset-item id="model2" src="assets/Model2.glb"></a-asset-item><a-asset-item id="model3" src="assets/guong3.glb"></a-asset-item><a-asset-item id="model4" src="assets/guong2.glb"></a-asset-item><a-asset-item id="model5" src="assets/Model3_1.glb"></a-asset-item><a-asset-item id="model6" src="assets/Model4_1.glb"></a-asset-item><a-asset-item id="model7" src="assets/Guong7_2.glb"></a-asset-item></a-assets><a-camera id="camera" position="0 8 8" raycaster="
+      objects: .cantap, .placed-model, [xr-planes];
+      far: 100;
+      near: 0.1;" cursor="
+      fuse: false;
+      rayOrigin: mouse;"></a-camera><a-entity light="
+      type: directional;
+      intensity: 0.8;
+      castShadow: true;
+      shadowMapHeight:2048;
+      shadowMapWidth:2048;
+      shadowCameraTop: 40;
+      shadowCameraBottom: -40;
+      shadowCameraRight: 40;
+      shadowCameraLeft: -40;
+      target: #camera" xrextras-attach="target: camera; offset: 8 15 4" position="1 4.3 2.5" shadow></a-entity><a-light type="ambient" intensity="0.5"></a-light><a-box id="ground" class="cantap" scale="1000 2 1000" position="0 -0.99 0" material="shader: shadow; transparent: true; opacity: 0.4" shadow></a-box><a-entity xr-planes-visual xr-planes class="cantap"></a-entity></a-scene></body></html>
